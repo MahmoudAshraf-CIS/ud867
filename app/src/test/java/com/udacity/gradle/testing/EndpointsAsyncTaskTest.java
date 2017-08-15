@@ -6,6 +6,7 @@ package com.udacity.gradle.testing;
 
 import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class EndpointsAsyncTaskTest {
@@ -13,14 +14,16 @@ public class EndpointsAsyncTaskTest {
     @Test
     public void verifyEndpointsResponse() {
 
-        try {
-            String joke = (new EndpointsAsyncTask(null)).get();
 
-            assert (!joke.equals(null));
+        String joke=null;
+        try {
+            joke = (new EndpointsAsyncTask(null)).execute(null,null,null).get();
         } catch (Exception e) {
             e.fillInStackTrace();
         }
 
-
+        Assert.assertNotNull(joke);
+        Assert.assertTrue(!joke.startsWith(EndpointsAsyncTask.TAG));
+        Assert.assertTrue(!joke.equals(""));
     }
 }

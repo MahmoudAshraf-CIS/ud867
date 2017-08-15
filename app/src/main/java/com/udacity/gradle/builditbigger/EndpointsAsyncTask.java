@@ -15,8 +15,9 @@ import java.io.IOException;
 /**
  * Created by Mannas on 8/13/2017.
  */
-
 public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
+    public static final String TAG = EndpointsAsyncTask.class.getName();
+
     private static MyApi myApiService = null;
     private JokeActivityLauncher launcher;
     public EndpointsAsyncTask(JokeActivityLauncher launcher){
@@ -46,7 +47,7 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
         try {
             return myApiService.sayAJoke().execute().getData();
         } catch (IOException e) {
-            return e.getMessage();
+            return TAG.concat(e.getMessage());
         }
     }
 

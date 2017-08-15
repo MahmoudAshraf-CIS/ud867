@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements JokeActivityLaunc
     @Override
     public void launchJokerActivity(String joke) {
         Intent i = new Intent(getApplicationContext(), JokeActivity.class);
-        i.putExtra(JokeActivity.JOKE_KEY ,new Joker().getJoke());
+        i.putExtra(JokeActivity.JOKE_KEY ,joke);
         startActivity(i);
         btn.setEnabled(true);
         spinner.setVisibility(View.GONE);
