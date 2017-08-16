@@ -53,6 +53,7 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
 
     @Override
     protected void onPostExecute(String s) {
-        launcher.launchJokerActivity(s);
+        if(launcher!=null)
+            launcher.launchJokerActivity(s);
     }
 }

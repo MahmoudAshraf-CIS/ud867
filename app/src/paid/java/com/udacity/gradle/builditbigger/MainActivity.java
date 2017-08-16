@@ -11,7 +11,6 @@ import android.widget.ProgressBar;
 
 import com.example.androidlib.JokeActivity;
 import com.example.androidlib.JokeActivityLauncher;
-import com.udacity.gradle.jokes.Joker;
 
 public class MainActivity extends AppCompatActivity implements JokeActivityLauncher {
     Button btn;
